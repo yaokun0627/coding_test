@@ -1,0 +1,49 @@
+server:
+  port: 9900
+spring:
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    jdbc-url: jdbc:mysql://localhost:3306/dev?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: 12345678
+#配置商品库存最小值
+good:
+  min:
+    quantity: 3
+# 将日志输出到控制台
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+logging:
+  level:
+    com.exam.spring.project.mapper: DEBUG
+
+
+####redis配置
+#  redis:
+#    host: localhost
+#    #password: 123456
+#    port: 6379
+#    database: 1
+#    jedis:
+#      pool:
+#        max-active: 8
+#        max-wait: -1
+#        max-idle: 8
+#        min-idle: 0
+#    timeout: 5000
+  ###rabbitmq
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    username: admin
+#    password: 123456
+#    virtual-host: /
+#    connection-timeout: 15000
+#mybatis配置
+#mybatis:
+#  mapper-locations: classpath:mapper/*.xml
+#  type-aliases-package: com.exam.spring.*.entity
